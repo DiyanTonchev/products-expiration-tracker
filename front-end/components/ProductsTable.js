@@ -12,19 +12,18 @@ export default memo(({ products }) => (
       </tr>
     </thead>
     <tbody>
-      {
-        products.map(product => {
-          const isExpired = new Date() > moment(product.expirationDate)
-          return (
-            <tr key={product._id}>
-              <td>{product.name}</td>
-              <td>{product.manufacturer}</td>
-              <td className={isExpired ? 'text-danger' : ''}>{moment(product.expirationDate).format('MMM Do YY')}</td>
-            </tr>
-          )
-        })
-      }
+      {products.map(product => {
+        const isExpired = new Date() > moment(product.expirationDate)
+        return (
+          <tr key={product._id}>
+            <td>{product.name}</td>
+            <td>{product.manufacturer}</td>
+            <td className={isExpired ? 'text-danger' : ''}>
+              {moment(product.expirationDate).format('MMM Do YY')}
+            </td>
+          </tr>
+        )
+      })}
     </tbody>
   </Table>
-)
-)
+))

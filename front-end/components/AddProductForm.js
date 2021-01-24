@@ -1,10 +1,7 @@
 import React, { useState, memo, useRef } from 'react'
 import 'isomorphic-unfetch'
 import { useForm } from 'react-hook-form'
-import {
-  Button,
-  Form
-} from 'react-bootstrap'
+import { Button, Form } from 'react-bootstrap'
 
 export default memo(({ refreshProducts }) => {
   const [productName, setProductName] = useState()
@@ -24,22 +21,22 @@ export default memo(({ refreshProducts }) => {
   }
 
   const onDateChange = e => {
-    setExpirationDate(new Date(e.target.value));
-  };
+    setExpirationDate(new Date(e.target.value))
+  }
 
   const onSubmit = async () => {
     await fetch('http://localhost:1001/product/register', {
       method: 'post',
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         name: productName,
         manufacturer,
-        expirationDate
-      })
-    });
+        expirationDate,
+      }),
+    })
 
     await refreshProducts()
 
@@ -54,8 +51,9 @@ export default memo(({ refreshProducts }) => {
       ref={form}
       noValidate
       validated={Object.entries(errors).length}
-      onSubmit={handleSubmit(onSubmit)} 
-      className='mb-4'>
+      onSubmit={handleSubmit(onSubmit)}
+      className='mb-4'
+    >
       <Form.Group controlId='formProductName'>
         <Form.Label>Product Name</Form.Label>
         <Form.Control
@@ -67,9 +65,7 @@ export default memo(({ refreshProducts }) => {
           placeholder='Enter a product name'
         />
         {errors.name && (
-          <Form.Control.Feedback type="invalid">
-            Please enter a product name
-          </Form.Control.Feedback>
+          <Form.Control.Feedback type='invalid'>Please enter a product name</Form.Control.Feedback>
         )}
       </Form.Group>
       <Form.Group controlId='formProductManufacturer'>
@@ -83,9 +79,7 @@ export default memo(({ refreshProducts }) => {
           placeholder='Enter a manufacturer'
         />
         {errors.manufacturer && (
-          <Form.Control.Feedback type="invalid">
-            Please enter a manufacturer
-          </Form.Control.Feedback>
+          <Form.Control.Feedback type='invalid'>Please enter a manufacturer</Form.Control.Feedback>
         )}
       </Form.Group>
       <Form.Group controlId='formExpirationDate'>
@@ -95,18 +89,15 @@ export default memo(({ refreshProducts }) => {
           name='expirationDate'
           ref={register({ required: true })}
           required
-          onChange={onDateChange} />
+          onChange={onDateChange}
+        />
         {errors.expirationDate && (
-          <Form.Control.Feedback type="invalid">
+          <Form.Control.Feedback type='invalid'>
             Please choose an expiration date
           </Form.Control.Feedback>
         )}
       </Form.Group>
-      <Button
-        variant='primary'
-        id='submit-product-btn'
-        type='submit'
-      >
+      <Button variant='primary' id='submit-product-btn' type='submit'>
         Submit
       </Button>
     </Form>

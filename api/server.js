@@ -15,7 +15,7 @@ mongoose.connect(
     useNewUrlParser: true,
     useUnifiedTopology: true,
   },
-  (error) => {
+  error => {
     if (error) {
       console.error('Please make sure Mongodb is installed and running!')
       throw error

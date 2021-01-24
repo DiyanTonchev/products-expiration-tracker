@@ -1,8 +1,7 @@
 const Product = require('../models/product')
 
 const getAll = (req, res) => {
-  Product
-    .find({})
+  Product.find({})
     .limit(100)
     .sort('-expirationDate')
     .then(products => {
@@ -15,11 +14,10 @@ const registerProduct = (req, res) => {
   const data = {
     name: req.body.name,
     manufacturer: req.body.manufacturer,
-    expirationDate: req.body.expirationDate
+    expirationDate: req.body.expirationDate,
   }
 
-  Product
-    .create(data)
+  Product.create(data)
     .then(products => {
       res.json(products)
     })
@@ -31,5 +29,5 @@ const registerProduct = (req, res) => {
 
 module.exports = {
   getAll,
-  registerProduct
+  registerProduct,
 }
