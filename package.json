@@ -1,0 +1,32 @@
+{
+  "name": "product-expiration-tracker",
+  "version": "1.0.0",
+  "description": "An Electron application for tracking expired products",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "Diyan Tonchev",
+  "license": "ISC",
+  "devDependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "electron": "^11.2.0",
+    "eslint": "^7.18.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.13",
+    "prettier": "^2.2.1"
+  },
+  "dependencies": {}
+}

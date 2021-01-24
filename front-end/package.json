@@ -1,0 +1,25 @@
+{
+  "name": "products-expiration-tracker-fe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "Diyan Tonchev",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "isomorphic-unfetch": "^2.0.0",
+    "moment": "^2.29.1",
+    "next": "^4.2.3",
+    "prop-types": "^15.7.2",
+    "react": "^16.2.0",
+    "react-bootstrap": "^1.4.3",
+    "react-dom": "^16.2.0",
+    "react-hook-form": "^6.14.2"
+  }
+}
